@@ -1,0 +1,103 @@
+# Generate the high-fidelity SVG matching the uploaded ChatGPT Image
+# Let's inspect coordinates on a 1000x1000 canvas with center at 500, 500
+
+# Outer ring:
+# Center cx=500, cy=500, r=460.
+# Stroke color: #F5D2D8, stroke-width: 14.
+# Fill: #211217.
+
+# The Letters R and B:
+# Color: #F5D2D8.
+
+svg = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="100%" height="100%">
+  <!-- Circular container matching uploaded Reya Beauty emblem -->
+  <circle cx="500" cy="500" r="460" fill="#211217" stroke="#F5D2D8" stroke-width="16" />
+
+  <!-- Monogram RB -->
+  <g fill="#F5D2D8">
+    <!-- Letter R -->
+    <!-- Outer contour of R -->
+    <!-- Starts bottom left: (152, 694) -->
+    <!-- Up left vertical edge to (152, 370) -->
+    <!-- Curves up-right: (152, 330) -> (180, 306) -> (270, 306) -->
+    <!-- Across top of R: -> (360, 306) -> (474, 326) -> (474, 420) -->
+    <!-- Curves in along bottom of top bowl: -> (474, 470) -> (424, 506) -> (360, 506) -->
+    <!-- Outer edge of swooping leg: curves down-right -> (436, 524) -> (482, 574) -> (502, 642) -> (502, 694) -->
+    <!-- Across bottom to the waist of the wave: -> (392, 694) -->
+    <!-- Inner edge of swooping leg curves up-left: -> (370, 650) -> (336, 608) -> (306, 568) -> (276, 550) -->
+    <!-- Down inner vertical stem to baseline: -> (276, 694) -->
+    <!-- Bottom flat edge of left stem: -> (152, 694) -->
+
+    <!-- Cutout inside top bowl of R (counter): -->
+    <!-- Fluid teardrop swooping from top-left to waist: -->
+    <!-- (276, 504) -> up-left (194, 372) -> top dome (240, 338) -> (330, 338) -> right side (392, 386) -> swooping down (362, 452) -> tapering into (276, 504) -->
+
+    <path fill-rule="evenodd" d="
+      M 152 694
+      L 152 372
+      C 152 330, 182 306, 270 306
+      C 362 306, 474 326, 474 420
+      C 474 472, 426 506, 360 506
+      C 434 522, 480 572, 502 654
+      L 502 694
+      L 394 694
+      C 390 656, 364 612, 332 574
+      C 310 546, 290 538, 276 538
+      L 276 694
+      Z
+      M 276 504
+      C 276 438, 204 382, 204 366
+      C 204 344, 238 338, 276 338
+      C 334 338, 386 354, 386 400
+      C 386 442, 342 482, 276 504
+      Z
+    " />
+
+    <!-- Letter B -->
+    <!-- Outer contour: -->
+    <!-- Left vertical at x=502 from y=372 to y=694 -->
+    <!-- Top arch: curves up-right -> (502, 330) -> (534, 306) -> (620, 306) -->
+    <!-- Across top of B: -> (710, 306) -> (818, 330) -> (818, 420) -->
+    <!-- In to waist: -> (818, 472) -> (770, 504) -> (694, 506) -->
+    <!-- Out into bottom lobe: -> (780, 514) -> (852, 558) -> (852, 624) -->
+    <!-- Around bottom right: -> (852, 678) -> (804, 694) -> (716, 694) -->
+    <!-- Baseline back to center: -> (502, 694) -->
+
+    <!-- Top cutout of B: -->
+    <!-- (626, 504) -> up-left (554, 372) -> (554, 366) -> (588, 338) -> (626, 338) -> (684, 338) -> (736, 354) -> (736, 400) -> (692, 482) -> (626, 504) -->
+
+    <!-- Bottom cutout of B: -->
+    <!-- (626, 524) -> down inside (564, 584) -> (564, 642) -> (626, 654) -> (704, 654) -> (764, 624) -> (764, 568) -> (704, 524) -> (626, 524) -->
+
+    <path fill-rule="evenodd" d="
+      M 502 694
+      L 502 372
+      C 502 330, 534 306, 620 306
+      C 712 306, 818 330, 818 420
+      C 818 472, 770 504, 694 506
+      C 780 514, 852 558, 852 624
+      C 852 678, 804 694, 716 694
+      L 502 694
+      Z
+      M 626 504
+      C 626 438, 554 382, 554 366
+      C 554 344, 588 338, 626 338
+      C 684 338, 736 354, 736 400
+      C 736 442, 692 482, 626 504
+      Z
+      M 626 654
+      C 576 654, 564 606, 564 576
+      C 564 534, 626 524, 626 524
+      C 696 524, 764 546, 764 590
+      C 764 634, 706 654, 626 654
+      Z
+    " />
+  </g>
+</svg>
+"""
+
+with open("public/assets/reya-icon.svg", "w") as f:
+    f.write(svg)
+with open("public/favicon.svg", "w") as f:
+    f.write(svg)
+print("Updated public/assets/reya-icon.svg and public/favicon.svg")

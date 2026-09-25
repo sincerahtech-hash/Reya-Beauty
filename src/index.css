@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  
+  --color-wine: #401525;
+  --color-wine-dark: #211217;
+  --color-wine-light: #5B1F35;
+  --color-cream: #F9F5F1;
+  --color-blush: #F2E1E5;
+  --color-blush-light: #FAF3F5;
+  --color-blush-dark: #DEC3CA;
+  --color-charcoal: #211217;
+  --color-muted: #735F67;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+  }
+
+  body {
+    background-color: #F9F5F1;
+    color: #211217;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-serif);
+  }
+}
+
